@@ -88,6 +88,10 @@ def sendEmailWithFibonacci(response_data):
     
     except Exception as e:
         return f"Failed to send email: {str(e)}", 500
+# Redirección a la ruta raíz a /fibonacci
+@app.route('/')
+def index():
+    return redirect('/fibonacci')
 
 # Endpoint para calcular y retornar la secuencia Fibonacci
 @app.route('/fibonacci')
