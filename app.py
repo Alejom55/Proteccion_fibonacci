@@ -11,7 +11,7 @@ EMAIL_SENDER = config('EMAIL_SENDER')
 # Función para calcular la secuencia Fibonacci
 def fibonacci(n, first, second):
     if n < 0:
-        raise ValueError("El número n debe ser mayor o igual a 0.")
+        raise ValueError("The number n must be greater than or equal to 0.")
     elif n == 0:
         return [first]
     elif n == 1:
@@ -34,7 +34,8 @@ def sendEmailWithFibonacci(response_data):
     hours = response_data["hours"]
 
     sender = EMAIL_SENDER
-    recipients = ["didier.correa@proteccion.com.co", "correalondon@gmail.com"]
+    # recipients = ["didier.correa@proteccion.com.co", "correalondon@gmail.com"]
+    recipients = ["misteriosoA55@gmail.com", "gracruxouhacre-8415@yopmail.com"]
     subject = "Prueba Técnica - Alejandro Marín Henao"
     message = f"""
     <html>
