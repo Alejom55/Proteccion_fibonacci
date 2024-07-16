@@ -1,12 +1,12 @@
-from flask import Flask, request, make_response, redirect, render_template
+from flask import Flask, request, make_response, redirect, jsonify
 from datetime import datetime
 from sendEmail import emailSender
 from decouple import config
-# from flask_ngrok import run_with_ngrok
+from flask_ngrok import run_with_ngrok
 app = Flask(__name__)
 PASSWORD = config('EMAIL_PASSWORD')
 EMAIL_SENDER = config('EMAIL_SENDER')
-# run_with_ngrok(app)
+run_with_ngrok(app)
 
 # Función para calcular la secuencia Fibonacci
 def fibonacci(n, first, second):
@@ -34,8 +34,8 @@ def sendEmailWithFibonacci(response_data):
     hours = response_data["hours"]
 
     sender = EMAIL_SENDER
-    # recipients = ["didier.correa@proteccion.com.co", "correalondon@gmail.com"]
-    recipients = ["misteriosoA55@gmail.com", "gracruxouhacre-8415@yopmail.com"]
+    recipients = ["didier.correa@proteccion.com.co", "correalondon@gmail.com"]
+    # recipients = ["misteriosoA55@gmail.com", "gracruxouhacre-8415@yopmail.com"]
     subject = "Prueba Técnica - Alejandro Marín Henao"
     message = f"""
     <html>
@@ -139,4 +139,4 @@ def generateData():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()

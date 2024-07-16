@@ -1,5 +1,5 @@
 import unittest
-from main import app, fibonacci, sendEmailWithFibonacci
+from app import app, fibonacci, sendEmailWithFibonacci
 
 class TestFibonacci(unittest.TestCase):
 
